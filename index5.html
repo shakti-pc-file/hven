@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HVEN - Worldwide Locations</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* UNIQUE PAGE STYLING */
+        body {
+            background-color: beige;
+            font-family: 'Georgia', serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navbar {
+            background-color: #f4a261;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .navbar .navbar-brand {
+            font-size: 2.5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #2a9d8f;
+        }
+
+        .locations-header {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .locations-header h2 {
+            font-size: 3em;
+            color: #264653;
+            letter-spacing: 5px;
+        }
+
+        .locations-subtext {
+            font-size: 1.2em;
+            color: #2a9d8f;
+            margin-bottom: 50px;
+        }
+
+        .location-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .location-item {
+            width: 300px;
+            background-color: #fefae0;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .location-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .location-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .location-item h3 {
+            font-size: 1.8em;
+            color: #e76f51;
+            margin-bottom: 10px;
+        }
+
+        .location-item p {
+            font-size: 1.1em;
+            color: #264653;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #2a9d8f;
+            color: beige;
+            margin-top: 50px;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a class="navbar-brand" href="index.html">Home</a>
+    </nav>
+
+    <!-- Locations Section -->
+    <section class="locations-header">
+        <h2>Our Worldwide Locations</h2>
+        <p class="locations-subtext">Find HVEN in the finest cities around the globe.</p>
+    </section>
+
+    <section class="location-grid">
+        <!-- Location Items as Buttons (Google Maps Links) -->
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=Los+Angeles,+USA" target="_blank">
+                <h3>Los Angeles, USA</h3>
+                <p>123 Beverly Hills Blvd, LA 90210</p>
+            </a>
+        </div>
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=London,+UK" target="_blank">
+                <h3>London, UK</h3>
+                <p>456 Mayfair St, London W1K 1QZ</p>
+            </a>
+        </div>
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=New+York,+USA" target="_blank">
+                <h3>New York, USA</h3>
+                <p>789 Madison Ave, NYC 10022</p>
+            </a>
+        </div>
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=Warsaw,+Poland" target="_blank">
+                <h3>Warsaw, Poland</h3>
+                <p>1 Nowy Swiat, Warsaw 00-497</p>
+            </a>
+        </div>
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=Kiev,+Ukraine" target="_blank">
+                <h3>Kiev, Ukraine</h3>
+                <p>21 Khreshchatyk St, Kiev 01001</p>
+            </a>
+        </div>
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=Sofia,+Bulgaria" target="_blank">
+                <h3>Sofia, Bulgaria</h3>
+                <p>5 Vitosha Blvd, Sofia 1000</p>
+            </a>
+        </div>
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=Budapest,+Hungary" target="_blank">
+                <h3>Budapest, Hungary</h3>
+                <p>32 Andrassy Ave, Budapest 1061</p>
+            </a>
+        </div>
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=Moscow,+Russia" target="_blank">
+                <h3>Moscow, Russia</h3>
+                <p>50 Tverskaya St, Moscow 125009</p>
+            </a>
+        </div>
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=Venice,+Italy" target="_blank">
+                <h3>Venice, Italy</h3>
+                <p>12 Piazza San Marco, Venice 30124</p>
+            </a>
+        </div>
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=Cairo,+Egypt" target="_blank">
+                <h3>Cairo, Egypt</h3>
+                <p>9 Tahrir Square, Cairo 11511</p>
+            </a>
+        </div>
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=Tokyo,+Japan" target="_blank">
+                <h3>Tokyo, Japan</h3>
+                <p>3 Chiyoda, Tokyo 100-0001</p>
+            </a>
+        </div>
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=Paris,+France" target="_blank">
+                <h3>Paris, France</h3>
+                <p>22 Avenue Montaigne, Paris 75008</p>
+            </a>
+        </div>
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=Madrid,+Spain" target="_blank">
+                <h3>Madrid, Spain</h3>
+                <p>10 Gran Via, Madrid 28013</p>
+            </a>
+        </div>
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=Barcelona,+Spain" target="_blank">
+                <h3>Barcelona, Spain</h3>
+                <p>14 Passeig de Gracia, Barcelona 08007</p>
+            </a>
+        </div>
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=Beijing,+China" target="_blank">
+                <h3>Beijing, China</h3>
+                <p>8 Wangfujing St, Beijing 100006</p>
+            </a>
+        </div>
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=Mumbai,+India" target="_blank">
+                <h3>Mumbai, India</h3>
+                <p>25 Marine Drive, Mumbai 400020</p>
+            </a>
+        </div>
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=Sydney,+Australia" target="_blank">
+                <h3>Sydney, Australia</h3>
+                <p>42 Darling Street, Balmain, Sydney, NSW 2041</p>
+            </a>
+        </div>
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=Munich,+Germany" target="_blank">
+                <h3>Munich, Germany</h3>
+                <p>18 Maximilianstrasse, Munich 80539</p>
+            </a>
+        </div>
+
+        <!-- South America -->
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=Buenos+Aires,+Argentina" target="_blank">
+                <h3>Buenos Aires, Argentina</h3>
+                <p>27 Avenida de Mayo, Buenos Aires C1084</p>
+            </a>
+        </div>
+        <div class="location-item">
+            <a href="https://www.google.com/maps?q=São+Paulo,+Brazil" target="_blank">
+                <h3>São Paulo, Brazil</h3>
+                <p>35 Avenida Paulista, São Paulo 01310-200</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        © 2024 HVEN - Old Money Aesthetic Clothing
+    </footer>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HVEN - Payment Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        .navbar {
+            background-color: #264653;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: #fefae0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+        .payment-header {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .payment-option {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fefae0;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .payment-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2a9d8f;
+            color: beige;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .payment-button:hover {
+            background-color: #264653;
+        }
+        .captcha-generator {
+            margin: 20px auto;
+            max-width: 400px;
+            text-align: center;
+        }
+        .captcha-image {
+            display: block;
+            margin: 20px auto;
+            font-size: 2em;
+        }
+        .captcha-result {
+            margin: 15px 0;
+            font-size: 1.2em;
+            color: #e76f51;
+        }
+        .confirmation-message {
+            margin: 20px auto;
+            font-size: 1.2em;
+            text-align: center;
+            color: #264653;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a class="navbar-brand" href="index.html">Home</a>
+    </nav>
+
+    <!-- Payment Section -->
+    <section class="payment-header">
+        <h2>Confirm Your Order - only for retailers</h2>
+        <button class="payment-button" onclick="confirmOrder()">Place Order</button>
+    </section>
+
+    <div id="confirmation" class="hidden confirmation-message">
+        <p>Your order has been confirmed! Please verify your identity to proceed.</p>
+    </div>
+
+    <!-- CAPTCHA Generator -->
+    <div class="captcha-generator hidden" id="captcha-section">
+        <h3>CAPTCHA Verification</h3>
+        <div id="captcha" class="captcha-image"></div>
+        <input type="text" id="captcha-input" placeholder="Enter CAPTCHA" />
+        <button class="payment-button" onclick="verifyCaptcha()">Verify CAPTCHA</button>
+        <div class="captcha-result" id="captcha-result"></div>
+        <button class="payment-button" onclick="generateCaptcha()">Refresh CAPTCHA</button>
+    </div>
+
+    <!-- Payment Options -->
+    <div id="payment-options" class="hidden">
+        <section class="payment-option">
+            <h3>PayPal</h3>
+            <p>Secure online payments through PayPal.</p>
+            <button class="payment-button" onclick="initiatePayment('paypal')">Pay with PayPal</button>
+        </section>
+
+        <section class="payment-option">
+            <h3>Credit Card</h3>
+            <p>Pay securely with your credit card.</p>
+            <button class="payment-button" onclick="initiatePayment('credit-card')">Pay with Credit Card</button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        HVEN &copy; 2024 | Secure Payment Processing
+    </footer>
+
+    <script>
+        // Confirm Order Function
+        function confirmOrder() {
+            document.getElementById('confirmation').classList.remove('hidden');
+            document.getElementById('captcha-section').classList.remove('hidden');
+            generateCaptcha(); // Generate CAPTCHA on order confirmation
+        }
+
+        // CAPTCHA Generator Function
+        let captchaText = '';
+
+        function generateCaptcha() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            captchaText = '';
+            for (let i = 0; i < 6; i++) {
+                captchaText += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById('captcha').innerText = captchaText;
+        }
+
+        function verifyCaptcha() {
+            const userInput = document.getElementById('captcha-input').value;
+            const result = document.getElementById('captcha-result');
+            if (userInput === captchaText) {
+                result.innerText = 'CAPTCHA verified successfully!';
+                result.style.color = 'green';
+                document.getElementById('captcha-section').classList.add('hidden');
+                document.getElementById('payment-options').classList.remove('hidden');
+            } else {
+                result.innerText = 'CAPTCHA verification failed. Please try again.';
+                result.style.color = 'red';
+            }
+        }
+
+        // Initiate payment function (to be connected with the backend)
+        function initiatePayment(method) {
+            alert(`Initiating payment with ${method}.`);
+            // Here you can add logic to connect with your backend
+        }
+
+        // Generate CAPTCHA on page load
+        window.onload = generateCaptcha;
+    </script>
+</body>
+</html>
+
+            
+

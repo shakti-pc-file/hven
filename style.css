@@ -1,0 +1,213 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    padding-top: 70px; /* Offset for fixed navbar */
+    background-color: #d7b3b3; /* Light background for contrast */
+    color: #000000; /* Black for all general text */
+}
+
+/* Colors */
+.text-orange {
+    color: #FF5733; /* Tropical orange */
+}
+
+.text-black {
+    color: #000000; /* Black */
+}
+
+.btn-orange {
+    background-color: #FF5733;
+    color: black; /* Black text for buttons */
+}
+
+.btn-orange:hover {
+    background-color: #E94E2B;
+    color: black;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #F5F5DC; /* Beige instead of white */
+    border-bottom: 2px solid #FF5733;
+}
+
+.nav-link {
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+    color: #000000; /* Black text for nav links */
+}
+
+.nav-link:hover {
+    color: #FF5733; /* Tropical orange hover effect */
+}
+
+/* Section Titles */
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    color: #FF5733; /* Tropical orange for section titles */
+}
+
+h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: #FF5733;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* About Us Section */
+.about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #000000; /* Black text for About Us */
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Contact Section */
+.contact form .form-control {
+    border-radius: 0;
+    border: 2px solid #FF5733;
+    transition: border-color 0.3s ease;
+    color: #000000; /* Black text inside form fields */
+}
+
+.contact form .form-control:focus {
+    border-color: #E94E2B;
+    box-shadow: none;
+}
+
+.contact form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: black; /* Black text for submit button */
+}
+
+/* Footer */
+footer {
+    background-color: #0A1931;
+    color: #FF5733; /* Tropical orange text for footer */
+}
+
+/* Scroll Animation */
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading Animation */
+#loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #FF5733; /* Tropical orange background */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.4s ease;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #E5E5E5;
+    border-top: 6px solid #000000; /* Black spinner */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+body.loading #loading {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.loaded #loading {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Scroll Fade-In Animations */
+.section-fade {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.section-fade-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth Scroll Up Button */
+#scrollUp {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+    background-color: #FF5733;
+    padding: 10px 20px;
+    color: black; /* Black text for scroll button */
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#scrollUp:hover {
+    background-color: #E94E2B;
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .about p {
+        font-size: 1rem;
+    }
+
+    .contact form button {
+        font-size: 1rem;
+    }
+}
+
+
